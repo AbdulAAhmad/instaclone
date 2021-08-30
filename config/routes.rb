@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :photos, only: [:index, :show, :new, :create, :destroy]
 
+  resources :friends, only: [:index, :show, :new, :create, :destroy]
+
   resources :comments, only: [:create, :edit, :update, :destroy]
 
   root 'photos#index'

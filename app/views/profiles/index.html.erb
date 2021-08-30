@@ -9,6 +9,9 @@
   <% @users.each do |user| %>
     <p>
       <%= link_to user.username, profile_path(user.username) %>
+      <% if !current_user&.eql? user %>
+        <%= link_to "Add friend", friends_path(friend: user), method: :create%>
+      <% end %>
     </p>
   <% end %>
 </div>

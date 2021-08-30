@@ -1,0 +1,28 @@
+<h1>Friends</h1>
+
+<% if !@requesting_friends.empty? %>
+    <h2>Requests</h2>
+    <% @requesting_friends.each do |r_friend| %>
+        <p>
+        <%= r_friend.friend_user_id%>
+        </p>
+    <%end%>
+<% end %>
+<% if !@pending_friends.empty? %>
+    <h2>Pending</h2>
+    <% @pending_friends.each do |p_friend| %>
+        <p>
+        <%= p_friend.friend_user_id%>
+        </p>
+    <%end%>
+<%end%>
+<h2>Friends list</h2>
+    <% if @current_friends.empty? %>
+        <p>You dont currently have any friends</p>
+    <%else%>
+        <% @current_friends.each do |c_friend| %>
+                <p>
+                <%= c_friend.friend_user_id%>
+                </p>
+        <%end%>
+  <% end %>

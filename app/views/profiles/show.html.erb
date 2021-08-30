@@ -4,6 +4,8 @@
   <p>
     <% if current_user&.eql? @user %>
       <%= link_to "Upload photos", new_photo_path %>
+      <% else%>
+      <%= link_to "Add friend"%>
     <% end %>
   </p>
 
